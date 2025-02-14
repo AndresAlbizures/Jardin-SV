@@ -1,0 +1,81 @@
+/* Bienvenida.css */
+.bienvenida-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f1f8e9; /* Color suave de fondo */
+  font-family: 'Arial', sans-serif;
+  color: #4caf50; /* Color verde para el tema de jardín */
+  padding: 20px;
+  text-align: center;
+}
+
+.bienvenida-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #388e3c; /* Un verde más oscuro para el título */
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.bienvenida-text {
+  font-size: 1.2rem;
+  text-align: center;
+  color: #2c6b2f;
+  margin-bottom: 30px;
+  max-width: 500px;
+}
+.bienvenida-text2 {
+  font-size: 1.2rem;
+  text-align: center;
+  color: #712200;
+  margin-bottom: 30px;
+  max-width: 500px;
+}
+.empezar-btn {
+  background-color: #ffeb3b; /* Amarillo cálido */
+  color: #000;
+  font-size: 1.2rem;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.empezar-btn:hover {
+  background-color: #fbc02d; /* Color más oscuro para el hover */
+  transform: scale(1.05); /* Efecto de botón más grande al pasar el mouse */
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+  .bienvenida-title {
+      font-size: 2rem;
+  }
+  .bienvenida-text {
+      font-size: 1rem;
+      max-width: 90%;
+  }
+  .empezar-btn {
+      font-size: 1rem;
+      padding: 10px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .bienvenida-title {
+      font-size: 1.5rem;
+      max-width: 90%;
+  }
+  .bienvenida-text {
+      font-size: 0.9rem;
+      max-width: 90%;
+  }
+  .empezar-btn {
+      font-size: 0.9rem;
+      padding: 8px 16px;
+  }
+}

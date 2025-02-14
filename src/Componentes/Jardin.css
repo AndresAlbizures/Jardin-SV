@@ -1,0 +1,239 @@
+.jardin {
+  text-align: center;
+  background-image: url("/public/bg2.png");
+  background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
+  background-position: center; /* Centra la imagen */
+  /*ackground-repeat: no-repeat; /* Evita repeticiones */
+  background-attachment: fixed; /* Fija el fondo */
+  width: 100vw; /* Ocupar todo el ancho de la pantalla */
+  height: 100vh; /* Ocupar todo el alto de la pantalla */
+  padding: 20px;
+}
+
+h3 {
+  justify-self: center;
+  padding: 8px 8px;
+  max-width: 250px;
+  border-radius: 1.5rem;
+  color: cornsilk;
+  background-color: #37340e;
+}
+
+/* Selector de flor */
+.selector {
+  justify-self: center;
+  padding: 8px 8px;
+  max-width: 250px;
+  margin-bottom: 15px;
+  text-align: center;
+  border-radius: 1.5rem;
+  background-color: #37340e;
+}
+
+.selector label {
+  color: cornsilk;
+
+  font-size: 15px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.selector select {
+  font-size: 14px;
+  padding: 8px 8px;
+  border-radius: 5px;
+  border: 2px solid #8b4513;
+  background-color: #fffdd4;
+}
+
+/* Contenedor del jardín */
+.jardin-container {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(120px, 1fr)
+  ); /* Se ajusta dinámicamente */
+  gap: 10px;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Terreno */
+.terreno {
+  width: 100%;
+  max-width: 150px;
+  height: 180px;
+  border: 2px dashed #6b8e23;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #37340e;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.terreno:hover {
+  background-color: #554d16;
+}
+
+/* Contenedor de la flor */
+.flor-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 140px;
+  position: relative;
+}
+
+/* Imágenes de las flores */
+.flor {
+  width: 80%;
+  height: auto;
+  max-height: 90px;
+  object-fit: contain;
+  display: block;
+}
+
+/* Barra de crecimiento */
+.barra-progreso {
+  width: 80%;
+  height: 15px;
+  background-color: #ccc;
+  border-radius: 5px;
+  margin-top: 5px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #666;
+}
+
+.progreso {
+  height: 100%;
+  width: 0%;
+  background-color: #4caf50;
+  border-radius: 5px;
+  transition: width 0.5s ease-in-out;
+}
+
+/* Botones */
+.boton-regar,
+.boton-limpiar {
+  margin-top: 5px;
+  padding: 4px 8px;
+  font-size: 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.boton-regar {
+  background-color: #3498db;
+  color: white;
+}
+
+.boton-regar:hover {
+  background-color: #2980b9;
+  cursor: url("/public/regadera.png"), auto;
+}
+
+.boton-limpiar {
+  background-color: #294152;
+  color: white;
+}
+
+.boton-limpiar:hover {
+  background-color: #1e333f;
+}
+
+/* Contenedor de la regadera */
+.regadera-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+/* Imagen de la regadera */
+.regadera {
+  width: 200px;
+  height: auto;
+}
+
+/* Barra de agua */
+.barra-agua {
+  width: 180px;
+  height: 15px;
+  background-color: #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 2px solid #3498db;
+  margin-top: 5px;
+  position: relative;
+}
+
+.nivel-agua {
+  height: 100%;
+  width: 0%;
+  background-color: #529fd3;
+  transition: width 1s linear;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .jardin {
+    align-content: center;
+    background-position: center;
+    background-size: cover;
+    /*background-attachment: scroll; /* En móviles, 'fixed' puede no funcionar bien */
+    background-attachment: fixed; /* Fija el fondo */
+    width: auto; /* Ocupar todo el ancho de la pantalla */
+    height: 125vh; /* Ocupar todo el alto de la pantalla */
+}
+  .jardin-container {
+    
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(120px, 2fr)
+    ); /* Más adaptable */
+  }
+
+  .terreno {
+    max-width: 100px;
+    height: 130px;
+  }
+
+  .flor-container {
+    width: 80px;
+    height: 120px;
+  }
+
+  .flor {
+    max-height: 80px;
+  }
+
+  .selector label {
+    font-size: 14px;
+  }
+
+  .selector select {
+    font-size: 12px;
+  }
+
+  .boton-regar,
+  .boton-limpiar {
+    font-size: 10px;
+    padding: 3px 6px;
+  }
+
+  .regadera {
+    width: 150px;
+  }
+
+  .barra-agua {
+    width: 150px;
+    height: 12px;
+  }
+}

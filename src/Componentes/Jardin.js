@@ -2,12 +2,27 @@ import React, { useState, useEffect } from 'react';
 import './Jardin.css';
 
 const imagenesFlor = {
-  Tulipan: { semilla: "/seed.png", tallo: "/sprout.png", boton: "/spr.png", flor: "/Tulip100.svg" },
-  Herbera: { semilla: "/seed.png", tallo: "/sph.png", boton: "/talh.png", flor: "/herb100.svg" },
-  Chatia: { semilla: "/seed.png", tallo: "/chatsp.png", boton: "/chattall.png", flor: "/chat100.svg" },
+  Tulipan: { 
+    semilla: `${process.env.PUBLIC_URL}/seed.png`, 
+    tallo: `${process.env.PUBLIC_URL}/sprout.png`, 
+    boton: `${process.env.PUBLIC_URL}/spr.png`, 
+    flor: `${process.env.PUBLIC_URL}/Tulip100.svg`
+  },
+  Herbera: { 
+    semilla: `${process.env.PUBLIC_URL}/seed.png`, 
+    tallo: `${process.env.PUBLIC_URL}/sph.png`, 
+    boton: `${process.env.PUBLIC_URL}/talh.png`, 
+    flor: `${process.env.PUBLIC_URL}/herb100.svg`
+  },
+  Chatia: { 
+    semilla: `${process.env.PUBLIC_URL}/seed.png`, 
+    tallo: `${process.env.PUBLIC_URL}/chatsp.png`, 
+    boton: `${process.env.PUBLIC_URL}/chattall.png`, 
+    flor: `${process.env.PUBLIC_URL}/chat100.svg`
+  },
 };
 
-const topoImg = "/topo.png"; // Imagen del topo
+const topoImg = `${process.env.PUBLIC_URL}/topo.png`; // Imagen del topo
 
 const Jardin = () => {
   const [flores, setFlores] = useState([]);
@@ -20,7 +35,11 @@ const Jardin = () => {
   const [topos, setTopos] = useState([]); // Estado para los topos
 
   useEffect(() => {
-    const canciones = ["/aud-3.mp3", "/aud-2.mp3", "/aud-1.mp3"];
+    const canciones = [
+      `${process.env.PUBLIC_URL}/aud-3.mp3`,
+      `${process.env.PUBLIC_URL}/aud-2.mp3`,
+      `${process.env.PUBLIC_URL}/aud-1.mp3`
+    ];
     const audio = new Audio(canciones[Math.floor(Math.random() * canciones.length)]);
     audio.loop = true;
     audio.play().catch(err => console.warn("Error al reproducir la música:", err));
@@ -117,7 +136,7 @@ const Jardin = () => {
       <button className="mute-button" onClick={toggleMute}>{muted ? "🔇" : "🔊"}</button>
       <h3>¡Bienvenida a tu Jardín!</h3>
       <div className="regadera-container">
-        <img src="/regadera.png" alt="Regadera" className="regadera" style={{ width: "250px" }} />
+        <img src={`${process.env.PUBLIC_URL}/regadera.png`} alt="Regadera" className="regadera" style={{ width: "250px" }} />
         <div className="barra-agua">
           <div className="nivel-agua" style={{ width: `${agua}%` }}></div>
         </div>
